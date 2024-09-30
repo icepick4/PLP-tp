@@ -171,7 +171,7 @@ print(resultat)
 4. Utilisez les informations obtenues pour corriger l'erreur dans la fonction.
 5. Si vous voulez sortir du débogueur à tout moment, tapez la commande q et appuyez sur Entrée. Cela mettra fin à l'exécution du programme et vous ramènera au terminal.
 
-#### Exemple 2 :
+#### Exemple 2 (erreurs2.py):
 
 ```python
 from typing import List
@@ -221,6 +221,8 @@ print(resultat)
 
 5. Sortir de pdb :
     - Si vous voulez sortir du débogueur à tout moment, tapez la commande q et appuyez sur Entrée. Cela mettra fin à l'exécution du programme et vous ramènera au terminal.
+
+Veuillez noter toutes vos observations directement dans les fichiers C (`erreurs.c`) et Python (`erreurs1.py` et `exercice_pdb.py`) fournis, sous forme de commentaires.
 
 ## Exercice 2.2 [★]
 
@@ -327,6 +329,8 @@ Un programme C qui calcule le volume et la surface d'une sphère en utilisant de
     ```
 
 L'option `-O3` active des optimisations plus agressives que `-O2`, telles que l'optimisation des boucles, l'inlining de fonctions, et d'autres techniques qui peuvent améliorer la performance dans les calculs intensifs comme ceux de ce programme.
+
+Veuillez noter toutes vos observations directement dans les fichiers C fournis, sous forme de commentaires.
 
 ## Exercice 2.3 [★]
 
@@ -446,6 +450,8 @@ if __name__ == "__main__":
 
     Comparez les instructions générées pour la boucle `while` avec celles de la boucle `for`.
 
+Veuillez noter toutes vos observations directement dans les fichiers Python fournis, sous forme de commentaires.
+
 ## Exercice 2.4 [★★]
 
 **Manipulation de Chaînes de Caractères**
@@ -473,7 +479,7 @@ if __name__ == "__main__":
 
 **Gestion des données d'étudiant.e.s**
 
-**Objectif :** Écrire des programmes en C et en Python pour gérer les données de 5 étudiant.e.s en utilisant des structures en C et des classes en Python.
+**Objectif :** Écrire des programmes en C (`bd_école.c`) et en Python (`bd_école.py`) pour gérer les données de 5 étudiant.e.s en utilisant des structures en C et des classes en Python.
 
 ### En C
 
@@ -533,7 +539,7 @@ Un exemple d'utilisation de ce programme pourrait être :
 
 **Recherche de phrases dans un fichier**
 
-**Objectif :** Écrire des programmes en C et en Python qui permettent à l'utilisateur de rechercher une phrase spécifique dans un fichier donné. Le programme doit afficher les lignes du fichier où la phrase est présente, ainsi que le nombre de fois qu'elle apparaît dans chaque ligne.
+**Objectif :** Écrire des programmes en C (`phrases.c`) et en Python (`phrases.py`) qui permettent à l'utilisateur de rechercher une phrase spécifique dans un fichier donné. Le programme doit afficher les lignes du fichier où la phrase est présente, ainsi que le nombre de fois qu'elle apparaît dans chaque ligne.
 
 ### En C
 
@@ -588,17 +594,17 @@ Ligne 30, 1 fois
 
 **Gestion des couleurs et comptage des occurrences**
 
-**Objectif :** Écrire des programmes en C et en Python qui stockent un ensemble de couleurs et affichent les couleurs distinctes avec leur nombre d'occurrences. Chaque couleur est représentée par quatre valeurs : R (rouge), G (vert), B (bleu), et A (alpha), chacune étant un octet.
+**Objectif :** Écrire des programmes en C (`couleurs.c`) et en Python (`couleurs.py`) qui stockent un ensemble de couleurs et affichent les couleurs distinctes avec leur nombre d'occurrences. Chaque couleur est représentée par quatre valeurs : R (rouge), G (vert), B (bleu), et A (alpha), chacune étant un octet.
 
 ### En C
 
 1. **Définir une structure :**
 
-    - Créez une structure `Color` pour représenter une couleur, avec des membres pour R, G, B et A.
+    - Créez une structure `Couleur` pour représenter une couleur, avec des membres pour R, G, B et A.
 
 2. **Créer un tableau de couleurs :**
 
-    - Déclarez un tableau de 100 éléments de type `Color` pour stocker les couleurs.
+    - Déclarez un tableau de 100 éléments de type `Couleur` pour stocker les couleurs.
 
 3. **Compter les occurrences :**
 
@@ -612,11 +618,11 @@ Ligne 30, 1 fois
 
 1. **Définir une classe :**
 
-    - Créez une classe `Color` pour représenter une couleur, avec des attributs pour R, G, B et A.
+    - Créez une classe `Couleur` pour représenter une couleur, avec des attributs pour R, G, B et A.
 
 2. **Créer un tableau de couleurs :**
 
-    - Créez une liste de 100 instances de la classe `Color` pour stocker les couleurs.
+    - Créez une liste de 100 instances de la classe `Couleur` pour stocker les couleurs.
 
 3. **Compter les occurrences :**
 
