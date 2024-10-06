@@ -1,13 +1,13 @@
 /**
  * Author:    Rémi Jara
+ * Objective: Afficher la taille des types de données
  * Created:   16/09/2024
  *
  **/
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     printf("Size of char: %ld\n", sizeof(char));
     printf("Size of unsigned char: %ld\n", sizeof(unsigned char));
     printf("Size of short: %ld\n", sizeof(short));

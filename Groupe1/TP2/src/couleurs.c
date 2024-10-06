@@ -1,3 +1,9 @@
+/*
+ * Author: Remi Jara
+ * Objective: Créer une structure Color et afficher les occurrences de chaque couleur
+ * Created: 17/09/2024
+ **/
+
 struct Color
 {
     int r;

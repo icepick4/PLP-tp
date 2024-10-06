@@ -1,5 +1,6 @@
 /**
-* Author:    Matéo Guenot
+ * Author:    Matéo Guenot
+ * Objective: Chercher le nombre d'occurrences d'une phrase dans un fichier
  * Created:   17/09/2024
  *
  **/

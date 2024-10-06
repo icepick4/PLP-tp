@@ -1,5 +1,6 @@
 /**
-* Author:    Rémi Jara
+ * Author:    Rémi Jara
+ * Objective: Créer une structure Student et afficher les informations de 5 étudiants
  * Created:   17/09/2024
  *
  **/

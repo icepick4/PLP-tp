@@ -1,4 +1,5 @@
 # Author: Matéo Guenot
+# Objective: Manipuler des chaînes de caractères
 # Date: 17/09/2024
 
 

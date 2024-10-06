@@ -1,4 +1,5 @@
 # Author: Rémi Jara
+# Objective: Convertir un entier en binaire
 # Date: 16/09/2024
 
 if __name__ == "__main__":
@@ -13,6 +14,3 @@ if __name__ == "__main__":
             my_int = my_int // 2
 
     print(my_bin[::-1])
-    
-
-

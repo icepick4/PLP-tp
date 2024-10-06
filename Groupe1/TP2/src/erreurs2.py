@@ -1,4 +1,5 @@
 # Author:    Rémi Jara
+# Objective: Manipuler des erreurs de compilation
 # Created:   17/09/2024
 
 from typing import List
@@ -14,6 +15,7 @@ def double_values(tableau: List[int]) -> None:
 
     return tableau
 
+
 # Créer un tableau d'exemple
 tableau: List[int] = [1, 2, 3, 4, 5]
 
@@ -22,4 +24,3 @@ resultat = double_values(tableau)
 
 # Afficher le résultat final
 print(resultat)
-

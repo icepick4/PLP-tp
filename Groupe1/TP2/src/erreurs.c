@@ -1,5 +1,6 @@
 /**
  * Author:    Rémi Jara
+ * Objective: Manipuler des erreurs de compilation
  * Created:   17/09/2024
  *
  **/

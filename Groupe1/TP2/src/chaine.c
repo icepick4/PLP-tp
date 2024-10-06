@@ -1,5 +1,6 @@
 /**
-* Author:    Matéo Guenot
+ * Author:    Matéo Guenot
+ * Objective: Manipuler des chaînes de caractères
  * Created:   17/09/2024
  *
  **/

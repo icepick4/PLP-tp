@@ -1,5 +1,7 @@
 # Author: Matéo Guenot
+# Objective: Calculatrice simple
 # Date: 16/09/2024
+
 
 def main():
     num1 = int(input("Entrez le numéro 1 : "))
@@ -24,6 +26,7 @@ def main():
             print(num1, "%", num2, "=", num1 % num2)
         case _:
             print("Opérateur invalide")
+
 
 if __name__ == "__main__":
     main()

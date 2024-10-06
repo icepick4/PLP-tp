@@ -1,7 +1,8 @@
 # Author: Rémi Jara
+# Objective: Afficher les opérations arithmétiques de base
 # Date: 16/09/2024
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     a = 16
     b = 3
 

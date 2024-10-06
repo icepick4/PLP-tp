@@ -1,5 +1,7 @@
 # Author:    Rémi Jara
+# Objective: Créer une structure Student et afficher les informations de 5 étudiants
 # Created:   17/09/2024
+
 
 class Student:
     def __init__(self):
@@ -7,6 +9,7 @@ class Student:
         self.lastName = ""
         self.address = ""
         self.grades = [0.0] * 5
+
 
 students = []
 
@@ -18,7 +21,9 @@ for i in range(5):
     student.address = input(f"Enter the address of student {i + 1}: ")
 
     for j in range(5):
-        student.grades[j] = float(input(f"Enter the grade {j + 1} of student {i + 1}: "))
+        student.grades[j] = float(
+            input(f"Enter the grade {j + 1} of student {i + 1}: ")
+        )
 
     students.append(student)
 

@@ -1,4 +1,5 @@
 # Author: Matéo Guenot
+# Objective: Afficher un triangle rectangle
 # Date: 16/09/2024
 
 
@@ -12,7 +13,6 @@ def main():
     if compteur >= 10:
         print("Le nombre doit être inférieur à 10.")
         return
-
 
     for i in range(1, compteur + 1):
         for j in range(1, i + 1):
@@ -33,6 +33,7 @@ def main():
             j += 1
         print()
         i += 1
+
 
 # Appel de la fonction main
 if __name__ == "__main__":
