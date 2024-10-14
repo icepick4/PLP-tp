@@ -42,7 +42,7 @@ L'objectif du premier exercice est de comprendre le fonctionnement de l'interpr�
 * Vous pouvez utiliser des structures de contrôle (par exemple, `if`/`else if`/`else`) pour traiter les différentes commandes.
 * N'oubliez pas de mettre à jour le prompt de commande et les messages d'erreur pour refléter les changements.
 
-## Exercice 3.3 [★★]
+## Exercice 3.2 [★★]
 
 Ajouter de nouvelles fonctionnalités à l'interpréteur de commandes, incluant les commandes `aide` et `version`, ainsi que des fonctions pour les traiter.
 
@@ -87,7 +87,7 @@ Ajouter le support des commandes en français à l'interpréteur de commandes, e
 
 Assurez-vous de tester votre code pour vous assurer qu'il fonctionne correctement.
 
-## Exercice 3.3 [★★★]
+## Exercice 3.4 [★★★]
 
 Pour le dernier exercice, vous devrez réaliser un évaluateur pour l'interpréteur. Cela implique de créer un tokenizeur, un parseur et un évaluateur capable d'évaluer des expressions arithmétiques `(A opération B)`.
 
