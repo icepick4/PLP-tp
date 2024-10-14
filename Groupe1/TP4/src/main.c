@@ -3,6 +3,8 @@
 #include <ctype.h>  // <cctype> en C++
 
 #include "liste.h"
+#include "evaluer.h"
+
 
 int precedence(char operator) {
   if (operator == '+' || operator == '-') {
@@ -80,7 +82,11 @@ int main() {
   char *expression = "3 + 4 * (5 - 2) / 3";
   const int length = 19;
   char *result = stringToPostFix(expression, length);
-  printf("%s\n", result);
+
+  double resultOperation = 0;
+  resultOperation = evaluerExpression(result, length);
+
+  printf("Le résultat de l'opération de %s est : %f", result, resultOperation);
   free(result);
   return 0;
 }

@@ -48,14 +48,15 @@ int est_vide(struct liste *liste) {
     }
 }
 
-void depiler(struct liste *liste) {
+struct element depiler(struct liste *liste) {
     if (est_vide(liste)) {
         printf("La pile est vide\n");
-        return;
+        exit(1);
     }
 
     struct element *elem = liste->dernier.precedent;
     liste->dernier.precedent = elem->precedent;
     elem->precedent->suivant = &liste->dernier;
-    free(elem);
+
+    return *elem;
 }

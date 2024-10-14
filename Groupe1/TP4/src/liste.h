@@ -24,6 +24,6 @@ void parcourir_fin(struct liste *);
 
 int est_vide(struct liste *);
 
-void depiler(struct liste *);
+struct element depiler(struct liste *);
 
 #endif // LISTE_H
