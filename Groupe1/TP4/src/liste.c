@@ -40,6 +40,15 @@ void parcourir_fin(struct liste *liste) {
     }
 }
 
+void afficher_valeur(struct liste *liste) {
+    struct element *elem = liste->premier.suivant;
+    while (elem != &liste->dernier) {
+        printf("%f\n", elem->valeur);
+        elem = elem->suivant;
+    }
+}
+
+
 int est_vide(struct liste *liste) {
     if (liste->premier.suivant == &liste->dernier) {
         return 1;
@@ -51,7 +60,8 @@ int est_vide(struct liste *liste) {
 struct element depiler(struct liste *liste) {
     if (est_vide(liste)) {
         printf("La pile est vide\n");
-        exit(1);
+        struct element nouveau = {};
+        return nouveau;
     }
 
     struct element *elem = liste->dernier.precedent;

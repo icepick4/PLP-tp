@@ -3,6 +3,7 @@
 
 struct element {
     char operateur;
+    double valeur;
     struct element *suivant;
     struct element *precedent;
 };
@@ -21,6 +22,8 @@ void insertion_apres(struct element *, struct element *);
 void parcourir_debut(struct liste *);
 
 void parcourir_fin(struct liste *);
+
+void afficher_valeur(struct liste *);
 
 int est_vide(struct liste *);
 

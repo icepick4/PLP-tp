@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>  // <cctype> en C++
+#include <string.h>
 
 #include "liste.h"
 #include "evaluer.h"
@@ -79,12 +80,13 @@ char *stringToPostFix(char *expression, int length) {
 }
 
 int main() {
-  char *expression = "3 + 4 * (5 - 2) / 3";
+  char *expression = "3 + 4 * 5 - 2 / 3";
   const int length = 19;
   char *result = stringToPostFix(expression, length);
 
+  const int newLength = strlen(result);
   double resultOperation = 0;
-  resultOperation = evaluerExpression(result, length);
+  resultOperation = evaluerExpression(result, newLength);
 
   printf("Le résultat de l'opération de %s est : %f", result, resultOperation);
   free(result);

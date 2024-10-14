@@ -14,32 +14,46 @@ double evaluerExpression(char *expression, int length) {
     for (int i = 0; i < length; i++) {
         if (isdigit(expression[i])) {
             struct element *nouveau = malloc(sizeof(struct element));
-            nouveau->operateur = expression[i];
+            nouveau->valeur = (double) (expression[i] - '0');
+            printf("Nouveau chiffre : %f\n", nouveau->valeur);
             insertion_fin(&pileOperateur, nouveau);
         } else {
+            printf("La pile : ");
+            afficher_valeur(&pileOperateur);
             struct element operande1 = depiler(&pileOperateur);
             struct element operande2 = depiler(&pileOperateur);
             double resultNumber = 0;
 
+            printf("Opérande 1 : %f\n", operande1.valeur);
+            printf("Opérande 2 : %f\n", operande2.valeur);
             switch (expression[i]) {
                 case '+':
-                    resultNumber = (atof(&operande1.operateur) + atof(&operande2.operateur));
+                    resultNumber = operande1.valeur + operande2.valeur;
+                    break;
                 case '-':
-                    resultNumber = (atof(&operande1.operateur) / atof(&operande2.operateur));
+                    resultNumber = operande2.valeur - operande1.valeur;
+                    break;
                 case '/':
-                    resultNumber = (atof(&operande1.operateur) - atof(&operande2.operateur));
+                    resultNumber = operande2.valeur / operande1.valeur;
+                    break;
                 case '*':
-                    resultNumber = (atof(&operande1.operateur) * atof(&operande2.operateur));
+                    resultNumber = operande1.valeur * operande2.valeur;
+                    break;
                 default:
                     printf("Erreur ! L'expression %c n'est pas définie", expression[i]);
                     resultNumber = 0;
+                    break;
             }
 
+            printf("Résulat de l'opération %f %c %f : %f\n", operande2.valeur, expression[i], operande1.valeur,
+                   resultNumber);
+
             struct element *nouveau = malloc(sizeof(struct element));
-            nouveau->operateur = resultNumber;
-            insertion_debut(&pileOperateur, nouveau);
+            nouveau->valeur = resultNumber;
+            printf("Element à insérer : %f\n", nouveau->valeur);
+            insertion_fin(&pileOperateur, nouveau);
         }
     }
 
-    return pileOperateur.premier.suivant->operateur;
+    return pileOperateur.premier.suivant->valeur;
 }
