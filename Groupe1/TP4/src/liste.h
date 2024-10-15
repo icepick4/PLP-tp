@@ -27,6 +27,8 @@ void afficher_valeur(struct liste *);
 
 int est_vide(struct liste *);
 
-struct element depiler(struct liste *);
+struct element *depiler(struct liste *);
+
+void liberer_liste(struct liste *);
 
 #endif // LISTE_H
