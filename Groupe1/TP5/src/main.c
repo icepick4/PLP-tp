@@ -190,6 +190,7 @@ void ajouterVariable(char *nom, Type type, void *valeur)
         printf("Erreur : Changement de type non autorisé pour la variable %s\n", nom);
         return;
     }
+
     switch (type)
     {
     case ENTIER:
@@ -200,6 +201,24 @@ void ajouterVariable(char *nom, Type type, void *valeur)
         break;
     case CHAINE:
         strcpy(var->valeur.chaine, (char *)valeur);
+        break;
+    }
+
+    char *type_name;
+
+    switch (var->type)
+    {
+    case ENTIER:
+        type_name = "entier";
+        printf("Variable %s définie avec la valeur %d (%s)\n", nom, var->valeur.entier, type_name);
+        break;
+    case REEL:
+        type_name = "reel";
+        printf("Variable %s définie avec la valeur %f (%s)\n", nom, var->valeur.reel, type_name);
+        break;
+    case CHAINE:
+        type_name = "chaine de caractères";
+        printf("Variable %s définie avec la valeur %s (%s)\n", nom, var->valeur.chaine, type_name);
         break;
     }
 }
