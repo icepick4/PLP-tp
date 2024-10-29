@@ -290,18 +290,36 @@ int main()
         }
         else if (strstr(commande, "(lambdax.") != NULL)
         {
-            printf("Deuxieme IF\n");
-            // Récupérer l'expression après (lambda x. et avant la )
+            // Récupérer l'expression après (lambda et avant la )
             char *expression = malloc(100 * sizeof(char));
             int i = 0;
             while (commande[i] != '(')
             {
                 i++;
             }
-            i += 9;
+            i += 7;
+
+            // Récupérer la variable lambda
+            char *lambda = malloc(100 * sizeof(char));
+            lambda[0] = commande[i];
+            lambda[1] = '\0';
+
+            // Ajout de deux pour passer à l'expression
+            i += 2;
+
+            // Récupérer l'expression après la variable lambda
             int j = 0;
-            while (commande[i] != ')')
+            int ouvertureParenthese = 0;
+            while (commande[i] != ')' || ouvertureParenthese)
             {
+                if (commande[i] == '(')
+                {
+                    ouvertureParenthese = 1;
+                }
+                if (commande[i] == ')')
+                {
+                    ouvertureParenthese = 0;
+                }
                 expression[j] = commande[i];
                 i++;
                 j++;
@@ -320,19 +338,14 @@ int main()
             }
             lastNumber[j] = '\0';
 
-            printf("Expression : %s\n", expression);
-            printf("Last number : %s\n", lastNumber);
-
             // Remplacer x par le dernier chiffre
             for (int k = 0; k < strlen(expression); k++)
             {
-                if (expression[k] == 'x')
+                if (expression[k] == lambda[0])
                 {
                     expression[k] = lastNumber[0];
                 }
             }
-
-            printf("Expression remplacé : %s\n", expression);
 
             // Convertir l'expression en postfix
             const int length = strlen(expression);
@@ -347,10 +360,6 @@ int main()
             if (strcmp(result, "\0") != 0)
             {
                 printf("%f\n", resultOperation);
-            }
-            else
-            {
-                printf("Erreur lors de l'évaluation de l'expression\n");
             }
         }
         else
