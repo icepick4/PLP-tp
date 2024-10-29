@@ -1,3 +1,10 @@
+/**
+ * Authors:   Rémi Jara & Matéo Guenot
+ * Objective: Tokeniser une expression
+ * Created:   1/10/2024
+ *
+ **/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

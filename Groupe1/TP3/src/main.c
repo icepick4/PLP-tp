@@ -1,3 +1,10 @@
+/**
+ * Authors:   Rémi Jara & Matéo Guenot
+ * Objective: Parser, tokeniser et évaluer une expression
+ * Created:   1/10/2024
+ *
+ **/
+
 #include "lexer.h"
 #include "parseur.h"
 #include "evaluation.h"

@@ -1,3 +1,10 @@
+/**
+ * Authors:   Rémi Jara & Matéo Guenot
+ * Objective: Evaluer une expression
+ * Created:   19/10/2024
+ *
+ **/
+
 #include <stdio.h>
 #include <ctype.h> // <cctype> en C++
 #include <stdlib.h>

@@ -1,3 +1,10 @@
+/**
+ * Authors:   Rémi Jara & Matéo Guenot
+ * Objective: Evaluer une expression en notation postfixée
+ * Created:   14/10/2024
+ *
+ **/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>

@@ -1,3 +1,10 @@
+/**
+ * Authors:   Rémi Jara & Matéo Guenot
+ * Objective: Manipuler une liste doublement chaînée
+ * Created:   14/10/2024
+ *
+ **/
+
 #include "liste.h"
 
 #include <stdio.h>

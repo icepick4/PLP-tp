@@ -1,3 +1,10 @@
+/**
+ * Authors:   Rémi Jara & Matéo Guenot
+ * Objective: Evaluer une expression en notation postfixée avec des variables et des fonctions lambda
+ * Created:   14/10/2024
+ *
+ **/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -20,6 +27,7 @@ typedef struct
 {
     char nom[100];
     Type type;
+
     union
     {
         int entier;
@@ -190,7 +198,6 @@ void ajouterVariable(char *nom, Type type, void *valeur)
         printf("Erreur : Changement de type non autorisé pour la variable %s\n", nom);
         return;
     }
-
     switch (type)
     {
     case ENTIER:
@@ -201,24 +208,6 @@ void ajouterVariable(char *nom, Type type, void *valeur)
         break;
     case CHAINE:
         strcpy(var->valeur.chaine, (char *)valeur);
-        break;
-    }
-
-    char *type_name;
-
-    switch (var->type)
-    {
-    case ENTIER:
-        type_name = "entier";
-        printf("Variable %s définie avec la valeur %d (%s)\n", nom, var->valeur.entier, type_name);
-        break;
-    case REEL:
-        type_name = "reel";
-        printf("Variable %s définie avec la valeur %f (%s)\n", nom, var->valeur.reel, type_name);
-        break;
-    case CHAINE:
-        type_name = "chaine de caractères";
-        printf("Variable %s définie avec la valeur %s (%s)\n", nom, var->valeur.chaine, type_name);
         break;
     }
 }
@@ -270,12 +259,14 @@ int main()
                 }
             }
         }
+        printf("Commande : %s\n", commande);
         if (commande[0] == 'q')
         {
             quitter = 1;
         }
         else if (strstr(commande, "=") != NULL)
         {
+            printf("Premier IF\n");
             char nom[100];
             char valeur[100];
             printf("Commande : %s\n", commande);
@@ -297,8 +288,74 @@ int main()
                 ajouterVariable(nom, CHAINE, valeur);
             }
         }
+        else if (strstr(commande, "(lambdax.") != NULL)
+        {
+            printf("Deuxieme IF\n");
+            // Récupérer l'expression après (lambda x. et avant la )
+            char *expression = malloc(100 * sizeof(char));
+            int i = 0;
+            while (commande[i] != '(')
+            {
+                i++;
+            }
+            i += 9;
+            int j = 0;
+            while (commande[i] != ')')
+            {
+                expression[j] = commande[i];
+                i++;
+                j++;
+            }
+            expression[j] = '\0';
+
+            // Récupérer le dernier chiffre de la commande
+            char *lastNumber = malloc(100 * sizeof(char));
+            i++;
+            j = 0;
+            while (commande[i] != '\0')
+            {
+                lastNumber[j] = commande[i];
+                i++;
+                j++;
+            }
+            lastNumber[j] = '\0';
+
+            printf("Expression : %s\n", expression);
+            printf("Last number : %s\n", lastNumber);
+
+            // Remplacer x par le dernier chiffre
+            for (int k = 0; k < strlen(expression); k++)
+            {
+                if (expression[k] == 'x')
+                {
+                    expression[k] = lastNumber[0];
+                }
+            }
+
+            printf("Expression remplacé : %s\n", expression);
+
+            // Convertir l'expression en postfix
+            const int length = strlen(expression);
+            char *result = stringToPostFix(expression, length);
+
+            // Evaluer l'expression
+            const int newLength = strlen(result);
+            double resultOperation = 0;
+            resultOperation = evaluerExpression(result, newLength);
+
+            // Afficher le résultat
+            if (strcmp(result, "\0") != 0)
+            {
+                printf("%f\n", resultOperation);
+            }
+            else
+            {
+                printf("Erreur lors de l'évaluation de l'expression\n");
+            }
+        }
         else
         {
+            printf("ELSE\n");
             const int length = strlen(commande);
             char *result = stringToPostFix(commande, length);
 
